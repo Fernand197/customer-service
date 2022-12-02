@@ -2,7 +2,6 @@ package com.openlab.openlabcustomerservice.web;
 
 import com.openlab.openlabcustomerservice.dto.CustomerRequestDTO;
 import com.openlab.openlabcustomerservice.dto.CustomerResponseDTO;
-import com.openlab.openlabcustomerservice.entities.Customer;
 import com.openlab.openlabcustomerservice.services.CustomerService;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +25,7 @@ public class CustomerRestApi {
 
     @PostMapping(path = "/customers")
     public CustomerResponseDTO save(@RequestBody CustomerRequestDTO customerRequestDTO){
+        customerRequestDTO.setId(UUID.randomUUID().toString());
         return  customerService.save(customerRequestDTO);
     }
 

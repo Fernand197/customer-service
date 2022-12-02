@@ -5,11 +5,10 @@ import com.openlab.openlabcustomerservice.dto.CustomerResponseDTO;
 import com.openlab.openlabcustomerservice.entities.Customer;
 import com.openlab.openlabcustomerservice.mappers.CustomerMapper;
 import com.openlab.openlabcustomerservice.repositories.CustomerRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerResponseDTO getCostumer(String id) {
-        Customer customer = customerRepository.findById(id).get();
+        Customer customer = customerRepository.findById(id).orElse(null);
 
         return customerMapper.customerToCustomerResponseDTO(customer);
     }
