@@ -29,20 +29,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jakarta.inject-api</artifactId>
-                    <groupId>jakarta.inject</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>servo-core</artifactId>
-                    <groupId>com.netflix.servo</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>guava</artifactId>
-                    <groupId>com.google.guava</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
